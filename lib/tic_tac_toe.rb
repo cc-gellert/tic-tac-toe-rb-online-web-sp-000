@@ -36,7 +36,22 @@ def turn(board)
 end
 
 def turn_count(board)
-  numTurns = 
+  numTurns = 0 
+  board.each do |ele|
+    if(ele == "X" || ele == "O")
+      numTurns += 1 
+    end
+  end
+  return numTurns 
+end
+
+def current_player(board)
+  if(turn_count(board) % 2 == 0)
+    return "X"
+  else
+    return "O"
+  end
+end 
 
 WIN_COMBINATIONS = [
   [0, 1, 2],
