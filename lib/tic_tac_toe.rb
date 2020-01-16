@@ -101,6 +101,7 @@ end
 def play(board)
   while !over?(board)
     turn(board)
+  end 
     if(winner(board))
       puts "Congratulations to Player ${winner(board))! You're the winner"
     elsif(draw?(board))
