@@ -99,9 +99,11 @@ def winner(board)
 end
 
 def play(board)
-  turn = 0 
-  while turn < 9 
+  while !over?(board)
     turn(board)
-    turn += 1
+    if(winner(board))
+      puts "Congratulations to Player ${winner(board))! You're the winner"
+    elsif(draw?(board))
+      puts "Game ends in a draw."
   end
 end 
