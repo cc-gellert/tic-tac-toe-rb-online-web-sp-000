@@ -16,7 +16,7 @@ def move(board, index, current_player)
 end
 
 def position_taken?(board, index)
-  board[index] != " " && board[index] != ""
+  !(board[index].nil? || board[index] == " ")
 end
 
 def valid_move?(board, index)
@@ -35,17 +35,8 @@ def turn(board)
   end
 end
 
-def play(board)
-  turn = 0 
-  while turn < 9 
-    turn(board)
-    turn += 1
-  end
-end 
-
-def position_taken?(board, index)
-  !(board[index].nil? || board[index] == " ")
-end
+def turn_count(board)
+  numTurns = 
 
 WIN_COMBINATIONS = [
   [0, 1, 2],
@@ -92,3 +83,11 @@ def winner(board)
      return nil 
    end
 end
+
+def play(board)
+  turn = 0 
+  while turn < 9 
+    turn(board)
+    turn += 1
+  end
+end 
